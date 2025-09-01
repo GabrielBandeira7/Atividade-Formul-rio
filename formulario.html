@@ -113,15 +113,14 @@
 
   <script>
     document.getElementById('meuFormulario').addEventListener('submit', function(event) {
-      event.preventDefault(); // Impede envio real
+      event.preventDefault(); 
 
       const formData = new FormData(event.target);
       const obj = {};
 
-      // Lida com campos normais
       formData.forEach((value, key) => {
         if (obj[key]) {
-          // Se já existe (ex: checkboxes), vira array
+          
           if (!Array.isArray(obj[key])) {
             obj[key] = [obj[key]];
           }
@@ -131,10 +130,11 @@
         }
       });
 
-      console.log(obj); // Mostra no console
-      document.getElementById('saida').textContent = JSON.stringify(obj, null, 2); // Mostra na página
+      console.log(obj); 
+      document.getElementById('saida').textContent = JSON.stringify(obj, null, 2); 
     });
   </script>
 
 </body>
 </html>
+
